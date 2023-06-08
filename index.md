@@ -40,6 +40,9 @@ We'll simply create two small parts and use the UserInputService to detect hand 
 
 Let's define the camera:
 ```
+character:FindFirstChild("HumanoidRootPart").Anchored = true
+workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position)
+
 camera.CameraType = "Scriptable"
 camera.HeadScale = 1
 
