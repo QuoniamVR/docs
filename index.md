@@ -32,4 +32,51 @@ local uis = game:GetService("UserInputService")
 local player = game:GetService("Players").LocalPlayer
 local char = player.Character
 local rs = game:GetService("RunService")
+local starterGui = game:GetService("StarterGui")
+```
+
+Now, we need to define the camera, and add our hands; These will be the biggest part of the game!
+We'll simply create two small parts and use the UserInputService to detect hand movement!
+
+Let's define the camera:
+```
+camera.CameraType = "Scriptable"
+camera.HeadScale = 1
+
+starterGui:SetCore("VRLaserPointerMode", 0)
+starterGui:SetCore("VREnableControllerModels", false)
+```
+
+Now, lets add the hands:
+```
+	local rhand = Instance.new("Part")
+	rhand.Parent = character
+	rhand.CFrame = workspace
+	rhand.Size = Vector3.new(1, 1, 1)
+	rhand.Transparency = 0
+	rhand.CanCollide = false
+	rhand.Anchored = true
+	rhand.Name = "RightHand"
+  
+  local lhand = Instance.new("Part")
+	lhand.Parent = character
+	lhand.CFrame = workspace
+	lhand.Size = Vector3.new(1, 1, 1)
+	lhand.Transparency = 0
+	lhand.CanCollide = false
+	lhand.Anchored = true
+	lhand.Name = "LeftHand"
+```
+
+We need to make the hands move with the UserInputService, we can use UserInputService.UserCFrameChanged:
+```
+uis.UserCFrameChanged:Connect(function(part, move)
+		if part == Enum.UserCFrame.LeftHand then
+		lhand.CFrame = camera.CFrame*move
+		visuallhand.WorldCFrame = camera.CFrame*move
+		elseif part == Enum.UserCFrame.RightHand then
+		rhand.CFrame = camera.CFrame*move
+		visualrhand.WorldCFrame = camera.CFrame*move
+		end
+end)
 ```
