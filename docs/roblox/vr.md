@@ -40,7 +40,7 @@ We'll simply create two small parts and use the UserInputService to detect hand 
 
 Let's define the camera:
 ```
-character:FindFirstChild("HumanoidRootPart").Anchored = true
+char:FindFirstChild("HumanoidRootPart").Anchored = true
 workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position)
 
 camera.CameraType = "Scriptable"
@@ -53,7 +53,7 @@ starterGui:SetCore("VREnableControllerModels", false)
 Now, lets add the hands:
 ```
 	local rhand = Instance.new("Part")
-	rhand.Parent = character
+	rhand.Parent = char
 	rhand.CFrame = CFrame.new(0,0,0)
 	rhand.Size = Vector3.new(1, 1, 1)
 	rhand.Transparency = 0
@@ -62,7 +62,7 @@ Now, lets add the hands:
 	rhand.Name = "RightHand"
   
   local lhand = Instance.new("Part")
-	lhand.Parent = character
+	lhand.Parent = char
 	lhand.CFrame = CFrame.new(0,0,0)
 	lhand.Size = Vector3.new(1, 1, 1)
 	lhand.Transparency = 0
