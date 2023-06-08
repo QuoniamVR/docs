@@ -76,10 +76,8 @@ We need to make the hands move with the UserInputService, we can use UserInputSe
 uis.UserCFrameChanged:Connect(function(part, move)
 		if part == Enum.UserCFrame.LeftHand then
 		lhand.CFrame = camera.CFrame*move
-		visuallhand.WorldCFrame = camera.CFrame*move
 		elseif part == Enum.UserCFrame.RightHand then
 		rhand.CFrame = camera.CFrame*move
-		visualrhand.WorldCFrame = camera.CFrame*move
 		end
 end)
 ```
