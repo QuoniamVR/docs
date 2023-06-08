@@ -54,7 +54,7 @@ Now, lets add the hands:
 ```
 	local rhand = Instance.new("Part")
 	rhand.Parent = character
-	rhand.CFrame = workspace
+	rhand.CFrame = CFrame.new(0,0,0)
 	rhand.Size = Vector3.new(1, 1, 1)
 	rhand.Transparency = 0
 	rhand.CanCollide = false
@@ -63,7 +63,7 @@ Now, lets add the hands:
   
   local lhand = Instance.new("Part")
 	lhand.Parent = character
-	lhand.CFrame = workspace
+	lhand.CFrame = CFrame.new(0,0,0)
 	lhand.Size = Vector3.new(1, 1, 1)
 	lhand.Transparency = 0
 	lhand.CanCollide = false
